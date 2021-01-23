@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+{% for object in object_list %}
+
+  {{ object.author.username }}
+  {{ object.created_at }}
+  <p>{{ object.toukou }}</p>
+
+{% endfor %}
+
+
+
+<p><a href = "{% url 'create' %}">新規投稿画面</a></p>
+<p><a href = "{% url 'profile' user %}">プロフィール編集画面</a><p>
+{% endblock content %}
